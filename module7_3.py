@@ -25,7 +25,7 @@ class WordsFinder:
         word_lower = word.lower()
         for name, words in all_words.items():
             if word_lower in words:
-                result[name] = words.index(word_lower)
+                result[name] = words.index(word_lower) + 1
         return result
 
     def count(self, word):
@@ -37,6 +37,6 @@ class WordsFinder:
         return result
 
 finder2 = WordsFinder('test_file.txt')
-print(finder2.get_all_words())  # Все слова
-print(finder2.find('TEXT'))      # 3 слово по счёту
-print(finder2.count('teXT'))     # 4 слова teXT в тексте всего
+print(finder2.get_all_words())
+print(finder2.find('TEXT'))
+print(finder2.count('teXT'))
